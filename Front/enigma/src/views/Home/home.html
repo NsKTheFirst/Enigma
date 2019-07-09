@@ -1,0 +1,19 @@
+<div class="main">
+    <div class="connect">
+        <figure>
+            <img src="@/assets/logo_enigma.svg" alt="">
+        </figure>
+        <form action="">
+            <input type="text" placeholder="Pseudo" v-model="userName">
+            <input type="text" placeholder="Mot de passe" v-model="password">
+        </form>
+
+        <div class="actions">
+            <span @click="connect">Se connecter</span>
+            <span @click="register">S'inscrire</span>
+        </div>
+    </div>
+    <video autoplay loop id="bgvid">
+        <source src="@/assets/videoplayback.mp4">
+    </video>
+</div>

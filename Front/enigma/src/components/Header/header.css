@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background: #fff;
+    z-index: 999;
+    padding: .625em
+}
+
+.profil {
+    color: #000;
+    margin-right: .625em;
+    margin-top: .3125em
+}
+.logo{
+    width: 5.5em;
+    height: auto;
+    margin-left: .625em
+}
