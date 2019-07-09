@@ -1,7 +1,7 @@
 package com.simplon.enigma.controller;
 
-import fr.formation.students.entities.ApiErrors;
-import fr.formation.students.entities.ValidationError;
+import com.simplon.enigma.model.ApiErrors;
+import com.simplon.enigma.model.ValidationError;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

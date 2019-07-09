@@ -1,16 +1,13 @@
-package fr.formation.students.controller;
+package com.simplon.enigma.controller;
 
-import fr.formation.students.dtos.UserCreateDto;
-import fr.formation.students.dtos.UserUpdateDto;
-import fr.formation.students.dtos.UserViewDto;
-import fr.formation.students.services.UserServiceImpl;
-import org.springframework.data.domain.Page;
+import com.simplon.enigma.model.Person;
+import com.simplon.enigma.service.UserServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/users")
@@ -30,28 +27,20 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
-    protected void create(@Valid @RequestBody UserCreateDto user) {
-        System.out.println(user.toString());
-        userService.createUser(user);
+    protected void create(@Valid @RequestBody Person person) {
+        System.out.println(person.toString());
+        userService.createUser(person);
     }
 
     @PutMapping
-    protected void update(@Valid @RequestBody UserUpdateDto user) {
-        userService.update(user);
+    protected void update(@Valid @RequestBody Person person) {
+        userService.update(person);
     }
 
     @Secured("ROLE_ADMIN")
     @DeleteMapping("/{id}")
-    protected void delete(@PathVariable("id") Long id){
+    protected void delete(@PathVariable("id") UUID id){
         userService.delete(id);
     }
 
-    @GetMapping("/all")
-    @Secured("ROLE_USER")
-    protected Page<UserViewDto> findAll(@RequestParam(value = "s", required = false) Integer size,
-                                        @RequestParam("p") Integer page){
-        Integer checkedSize = (size == null ? 20 : size);
-
-        return userService.findAll(checkedSize, page);
-    }
 }
