@@ -3,6 +3,8 @@ package com.simplon.enigma.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
+
 public class ApiErrors {
 
     private LocalDateTime timestamp;
@@ -54,4 +56,5 @@ public class ApiErrors {
     public void setErrors(List<ValidationError> errors) {
         this.errors = errors;
     }
+
 }

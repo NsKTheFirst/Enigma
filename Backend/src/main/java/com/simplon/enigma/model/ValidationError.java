@@ -1,4 +1,4 @@
-package fr.formation.students.entities;
+package com.simplon.enigma.model;
 
 public class ValidationError {
     private String attributeName;

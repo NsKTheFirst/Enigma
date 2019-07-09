@@ -1,9 +1,7 @@
 package com.simplon.enigma.service;
-
-import fr.formation.students.entities.Person;
-import fr.formation.students.entities.UserAccount;
-import fr.formation.students.enumeration.Role;
-import fr.formation.students.repository.PersonRepository;
+import com.simplon.enigma.model.Person;
+import com.simplon.enigma.model.Role;
+import com.simplon.enigma.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -19,35 +17,30 @@ import java.util.Set;
 @Service
 public class UserDetailsServiceImp implements UserDetailsService {
 
-    private final PersonRepository repo;
-    protected UserDetailsServiceImp(PersonRepository repo){
+    private final UserRepository repo;
+    protected UserDetailsServiceImp(UserRepository repo){
         this.repo = repo;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println("load user by user name "+ username);
-        Person person = repo.findByUserAccountUsername(username);
+        Person person = repo.findByUsername(username);
         if (person == null){
+            System.out.println("je pa trouve ce con la");
             throw new UsernameNotFoundException("with username: " + username);
         }
         return buildUser(person);
     }
 
     private User buildUser(Person person){
-        UserAccount userAccount = person.getUserAccount();
-        String password = userAccount.getPassword();
-        Collection<? extends GrantedAuthority> authorities = buildAuthoroties(userAccount.getRole());
+        String password = person.getPassword();
+        Collection<? extends GrantedAuthority> authorities = buildAuthoroties(person.getRole());
         User userToReturn = new User(
-                userAccount.getUsername(),
-                userAccount.getPassword(),
-                userAccount.getEnabled(),
-                userAccount.isAccountNonExpired(),
-                userAccount.isCredentialsNonExpired(),
-                userAccount.isAccountNonLocked(),
+                person.getUsername(),
+                person.getPassword(),
                 authorities
         );
-        //System.out.println("user builer ______-----------"+ userToReturn.toString());
         return userToReturn;
     }
 
