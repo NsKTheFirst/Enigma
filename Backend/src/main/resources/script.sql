@@ -58,7 +58,7 @@ VALUES (
 5,
 'Porte mystère',
 'https://imgur.com/B9YEXdm',
-'La pièce qui m\'intéresse le plus est derrière cette porte… forcément fermée par un cadenas sur lequel on peut lire \"µ&$\". Je peux surement trouver trouver la bonne combinaison.',
+'La pièce qui m\'intéresse le plus est derrière cette porte… forcément fermée par un cadenas sur lequel on peut lire \'µ&$\'. Je peux surement trouver trouver la bonne combinaison.',
 '4',
 '2',
 '',
