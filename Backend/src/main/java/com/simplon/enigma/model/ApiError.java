@@ -1,4 +1,4 @@
-package fr.formation.students.entities;
+package com.simplon.enigma.model;
 
 import org.springframework.http.HttpStatus;
 

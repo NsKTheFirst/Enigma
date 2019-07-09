@@ -1,36 +1,49 @@
 package com.simplon.enigma.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import org.hibernate.annotations.Type;
+
+import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
+
+
+
 
 /**
  * @author Fadi NOUFAL
  */
 
 @Entity
-public class User {
+public class Person {
 
     @Id
+    @Type(type = "uuid-char")
+    @Column(name = "id")
     @GeneratedValue
     UUID id;
 
-    String nom;
+    String username;
 
     String email;
 
     String password;
 
-    Double scoureAvg;
+    Double scoreAvg;
 
     @OneToMany
     List<Score> scores;
 
-    public User(String nom, String email, String password) {
-        this.nom = nom;
+
+
+    @Column(nullable = false, length = 20)
+    @Enumerated(EnumType.STRING)
+    private Role role = Role.ROLE_USER;
+
+    public Person() {
+    }
+
+    public Person(String username, String email, String password) {
+        this.username = username;
         this.email = email;
         this.password = password;
     }
@@ -43,12 +56,12 @@ public class User {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -59,12 +72,12 @@ public class User {
         this.email = email;
     }
 
-    public Double getScoureAvg() {
-        return scoureAvg;
+    public Double getScoreAvg() {
+        return scoreAvg;
     }
 
-    public void setScoureAvg(Double scoureAvg) {
-        this.scoureAvg = scoureAvg;
+    public void setScoreAvg(Double scoreAvg) {
+        this.scoreAvg = scoreAvg;
     }
 
     public List<Score> getScores() {
@@ -82,4 +95,14 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
 }
