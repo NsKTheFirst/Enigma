@@ -9,7 +9,7 @@ VALUES (
 '',
 '',
 '1',
-?);
+11);
 
 INSERT INTO 'page' (nom, imageUrl, text, left, right, back, clue, position)
 VALUES (
@@ -20,7 +20,7 @@ VALUES (
 '',
 '',
 '1',
-?);
+16);
 
 INSERT INTO 'page' (nom, imageUrl, text, left, right, back,clue, position)
 VALUES (
@@ -31,7 +31,7 @@ VALUES (
 '4',
 '',
 '',
-?);
+10);
 
 INSERT INTO 'page' (nom, imageUrl, text, left, right, back, clue, position)
 VALUES (
@@ -42,7 +42,7 @@ VALUES (
 '5',
 '',
 '',
-?);
+16);
 
 INSERT INTO 'page' (nom, imageUrl, text, left, right, back, clue, position)
 VALUES (
@@ -53,9 +53,16 @@ VALUES (
 '2',
 '',
 '',
-?);
+17);
 
 INSERT INTO 'page' (nom, imageUrl, text, left, right, back, clue, position)
 VALUES (
+'Indice salon',
+'https://imgur.com/4biuS0W',
+'C’est avec ce téléphone que la mère a essayé de prévenir la police avant l’inévitable. Oh, il est gravé quelque chose :',
 '',
-);
+'',
+'2',
+'$ = 5',
+?);
+
