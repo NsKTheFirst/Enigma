@@ -43,7 +43,7 @@
 }
 .actions{
     width: 25%;
-    margin: auto;
+    margin: 0 auto 2em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -51,6 +51,8 @@
 .actions span{
     padding: .312em;
     border-radius: .5em;
-    background: #2e85ee;
-    color: #fff
+    border: solid .0625em #cbab00;
+    box-shadow: 5px 5px 5px #c6c6c6;
+    color: #000
 }
+
