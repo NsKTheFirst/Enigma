@@ -13,7 +13,7 @@ import java.util.UUID;
  */
 
 @Entity
-public class Page {
+public class Piece {
 
     @Id
     @Type(type = "uuid-char")
