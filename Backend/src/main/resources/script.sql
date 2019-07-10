@@ -1,6 +1,6 @@
 USE enigma;
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left, right, back, clue, position)
+INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 1,
 1,
@@ -13,7 +13,7 @@ VALUES (
 '',
 11);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left, right, back, clue, position)
+INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 2,
 2,
@@ -26,7 +26,7 @@ VALUES (
 '',
 16);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left, right, back,clue, position)
+INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar,clue, position)
 VALUES (
 3,
 3,
@@ -39,7 +39,7 @@ VALUES (
 '',
 10);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left, right, back, clue, position)
+INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 4,
 4,
@@ -52,7 +52,7 @@ VALUES (
 '',
 16);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left, right, back, clue, position)
+INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 5,
 5,
@@ -65,7 +65,7 @@ VALUES (
 '',
 17);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left, right, back, clue, position)
+INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 6,
 6,
@@ -78,7 +78,7 @@ VALUES (
 '$ = 5',
 null);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left, right, back, clue, position)
+INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 7,
 7,
@@ -92,7 +92,7 @@ VALUES (
 null);
 
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left, right, back, clue, position)
+INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 8,
 8,
