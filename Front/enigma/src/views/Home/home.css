@@ -54,16 +54,23 @@ header h1 {
 }
 .actions {
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-around;
   width: 60%;
+  margin: auto;
+  flex-wrap: wrap;
 }
 .actions button {
   border: none;
   background-color: transparent;
   font-family: "Quattrocento";
-  font-size: 15px;
+  font-size: 17px;
   color: #7b7979;
+  line-height: 3em;
 }
 .actions button:hover {
   color: #cbab00;
