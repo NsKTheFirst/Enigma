@@ -1,5 +1,7 @@
 package com.simplon.enigma.model;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.UUID;
 
@@ -11,6 +13,8 @@ import java.util.UUID;
 public class Score {
 
     @Id
+    @Type(type = "uuid-char")
+    @Column(name = "id")
     @GeneratedValue
     UUID id;
 
@@ -18,9 +22,14 @@ public class Score {
     @JoinColumn(name = "person_id")
     Person person;
 
+
+
     Integer value;
 
-
+    public Score(Person person, Integer value) {
+        this.person = person;
+        this.value = value;
+    }
 
     public UUID getId() {
         return id;
