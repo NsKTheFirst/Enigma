@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login", "/security/authError",
                         "/security/login", "/security/logout", "/users",
                         "/users/dashboard","/users/saveScore","/users/page",
-                        "/users/userProfile")
+                        "/users/userProfile","/users/saveScores")
                 .permitAll().and().formLogin().loginPage("/security/login")
                 .loginProcessingUrl("/login")
                 .defaultSuccessUrl("/security/me", true)

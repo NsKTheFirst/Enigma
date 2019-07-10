@@ -6,7 +6,6 @@ import com.simplon.enigma.model.Score;
 import com.simplon.enigma.service.UserServiceImpl;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -57,9 +56,14 @@ public class UserController {
         return userService.findAll(checkedSize, page);
     }
 
+    @PostMapping("/saveScores")
+    public void saveScor(@RequestParam Integer value,@RequestParam UUID id ){
+        userService.saveScores(value, id);
+    }
+
     @PostMapping("/saveScore")
-    public void saveScore(@RequestParam Integer value,@RequestParam UUID id ){
-        userService.saveScore(value, id);
+    public void saveScore(@RequestBody Score score){
+        userService.saveScore(score);
     }
 
     @GetMapping("/page")

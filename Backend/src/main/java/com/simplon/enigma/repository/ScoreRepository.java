@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -18,4 +19,6 @@ public interface ScoreRepository extends JpaRepository<Score, UUID> {
     @Query("select new com.simplon.enigma.model.Score(s.person, s.value) "
             + "from Score s order by s.value desc")
     Page<Score> findAll(Pageable pageable);
+
+    //List<Score> findAllByPersonId(UUID id);
 }

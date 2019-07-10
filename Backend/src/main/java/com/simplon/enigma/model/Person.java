@@ -3,6 +3,8 @@ package com.simplon.enigma.model;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,11 +16,12 @@ import java.util.UUID;
  */
 
 @Entity
-public class Person {
+@Table(name = "person")
+public class Person implements Serializable {
 
     @Id
     @Type(type = "uuid-char")
-    @Column(name = "id")
+    @Column(name = "person_id")
     @GeneratedValue
     UUID id;
 
@@ -30,9 +33,8 @@ public class Person {
 
     Double scoreAvg;
 
-    @OneToMany
+    @OneToMany(mappedBy = "person", targetEntity = Score.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Score> scores;
-
 
 
     @Column(nullable = false, length = 20)
@@ -42,10 +44,26 @@ public class Person {
     public Person() {
     }
 
-    public Person(String username, String email, String password) {
+    public Person(String username, String email, String password, Double scoreAvg, List<Score> scores, Role role) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.scoreAvg = scoreAvg;
+        this.scores = scores;
+        this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", scoreAvg=" + scoreAvg +
+                ", scores=" + scores +
+                ", role=" + role +
+                '}';
     }
 
     public UUID getId() {
@@ -72,6 +90,14 @@ public class Person {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Double getScoreAvg() {
         return scoreAvg;
     }
@@ -88,15 +114,6 @@ public class Person {
         this.scores = scores;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-
     public Role getRole() {
         return role;
     }
@@ -104,5 +121,4 @@ public class Person {
     public void setRole(Role role) {
         this.role = role;
     }
-
 }

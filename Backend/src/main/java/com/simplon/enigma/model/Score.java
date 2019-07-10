@@ -3,6 +3,7 @@ package com.simplon.enigma.model;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.UUID;
 
 /**
@@ -10,7 +11,8 @@ import java.util.UUID;
  */
 
 @Entity
-public class Score {
+@Table(name = "score")
+public class Score implements Serializable {
 
     @Id
     @Type(type = "uuid-char")
@@ -19,12 +21,13 @@ public class Score {
     UUID id;
 
     @ManyToOne
-    @JoinColumn(name = "person_id")
+    @JoinColumn(name="person_id")
     Person person;
 
-
-
     Integer value;
+
+    public Score() {
+    }
 
     public Score(Person person, Integer value) {
         this.person = person;
@@ -39,8 +42,8 @@ public class Score {
         this.id = id;
     }
 
-    public Person getPerson() {
-        return person;
+    public UUID getPerson() {
+        return person.getId();
     }
 
     public void setPerson(Person person) {
@@ -53,5 +56,14 @@ public class Score {
 
     public void setValue(Integer value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Score{" +
+                "id=" + id +
+                ", person=" + person +
+                ", value=" + value +
+                '}';
     }
 }

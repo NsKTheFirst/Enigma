@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 
@@ -61,10 +62,10 @@ public class UserServiceImpl implements UserService {
         return scoreRepository.findAll(pageable);
     }
 
-    public void saveScore(Integer value, UUID id) {
-        Person person = userRepository.findById(id).get();
-        Score scoreToSave = new Score(person, value);
-        scoreRepository.save(scoreToSave);
+    public void saveScore(Score score) {
+        //Person person = userRepository.findById(id).get();
+        //Score scoreToSave = new Score(person.getId(), value);
+        scoreRepository.save(score);
     }
 
     public Piece findPieceByNumPage(Integer numPage) {
@@ -72,7 +73,17 @@ public class UserServiceImpl implements UserService {
     }
 
     public Person findOnePerson(UUID id) {
-        return userRepository.findById(id).get();
+
+        Person personToReturn = userRepository.findById(id).get();
+        //List<Score> scores =scoreRepository.findAllByPersonId(id);
+        //personToReturn.setScores(scores);
+        return personToReturn;
+    }
+
+    public void saveScores(Integer value, UUID id) {
+        Person person = userRepository.findById(id).get();
+        Score scoreToSave = new Score(person, value);
+        scoreRepository.save(scoreToSave);
     }
 }
 
