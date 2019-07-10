@@ -6,11 +6,6 @@
 .main{
     padding-top: 12.5em
 }
-#bgvid{
-    position: fixed; right: 0; bottom: 0;
-    min-width: 100%; min-height: 100%;
-    width: auto; height: auto; z-index: -100;
-}
 .connect{
     width: 40%;
     margin: auto;
