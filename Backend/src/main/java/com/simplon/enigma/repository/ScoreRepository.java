@@ -17,5 +17,5 @@ public interface ScoreRepository extends JpaRepository<Score, UUID> {
 
     @Query("select new com.simplon.enigma.model.Score(s.person, s.value) "
             + "from Score s order by s.value desc")
-    Page<Score> findAllByValue(Pageable pageable);
+    Page<Score> findAll(Pageable pageable);
 }
