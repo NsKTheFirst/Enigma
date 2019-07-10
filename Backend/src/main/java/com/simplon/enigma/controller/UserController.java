@@ -27,8 +27,8 @@ public class UserController {
     }
 
     @GetMapping("/userProfile")
-    public Person findOnePerson(@RequestParam UUID id){
-        return userService.findOnePerson(id);
+    public Person findOnePerson(@RequestParam String name){
+        return userService.findOnePerson(name);
     }
 
     @PostMapping

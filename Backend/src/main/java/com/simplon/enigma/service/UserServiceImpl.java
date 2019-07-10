@@ -72,9 +72,9 @@ public class UserServiceImpl implements UserService {
         return pieceRepository.findAllByNumPage(numPage);
     }
 
-    public Person findOnePerson(UUID id) {
+    public Person findOnePerson(String name) {
 
-        Person personToReturn = userRepository.findById(id).get();
+        Person personToReturn = userRepository.findByUsername(name);
         //List<Score> scores =scoreRepository.findAllByPersonId(id);
         //personToReturn.setScores(scores);
         return personToReturn;
