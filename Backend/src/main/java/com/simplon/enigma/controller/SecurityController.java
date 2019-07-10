@@ -25,10 +25,11 @@ public class SecurityController {
      * @return the principal; never {@code null}
      */
     @GetMapping("/me")
-    protected User me() {
-        System.out.println("/me   ______  je suis la");
-	return (User) SecurityContextHolder.getContext()
-		.getAuthentication().getPrincipal();
+    protected ResponseEntity<Object>  me() {
+        HttpStatus status = HttpStatus.OK;
+        return new ResponseEntity<>(SecurityContextHolder.getContext()
+                .getAuthentication().getPrincipal(),
+                status);
     }
 
     /**
