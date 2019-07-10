@@ -1,16 +1,14 @@
 const axios = require("axios");
+import routeur from "../router";
 
 export default {
   //create user
   createUser(userData) {
-    axios
-      .post("http://localhost:8080/users", userData)
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    axios.post("http://localhost:8080/users", userData).then(response => {
+      if (response.status === 201) {
+        routeur.push("profile");
+      }
+    });
   },
 
   //loge user
@@ -37,8 +35,13 @@ export default {
       mode: "no-cors",
       withCredentials: true,
       credentials: "include"
-    }).then(responseData => {
-      console.log(JSON.stringify(responseData));
+    }).then(response => {
+      console.log(response.status);
+      if (response.status != 200) {
+        alert("Cet utilisateur n'existe pas. Merci de vous inscrire.");
+      } else {
+        routeur.push("profile");
+      }
     });
   }
 };

@@ -3,7 +3,10 @@
 
 <script>
     export default {
-        name: "Profile"
+        name: "Profile",
+        data() {
+            user: []
+        }
     }
 </script>
 

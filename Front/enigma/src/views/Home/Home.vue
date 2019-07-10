@@ -22,7 +22,8 @@ export default {
       event.preventDefault();
       usersServices.logUser(this.password, this.userName);
     }
-  }
+  },
+  redirect() {}
 };
 </script>
 
