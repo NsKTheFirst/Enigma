@@ -83,13 +83,13 @@ VALUES (
 7,
 7,
 'Indice Cuisine',
-' https://imgur.com/QSCpv3L',
+'https://imgur.com/QSCpv3L',
 'Ah, en y regardant de plus près, il y a comme des traces brune sombres dans l’évier. Quelqu\'un a trempé son doigt dans cette même couleur pour écrire :',
 '',
 '',
 '3',
 '& = $ -2',
-0);
+'');
 
 
 INSERT INTO enigma.page (id, numPage, nom, imageUrl, text, left, right, back, clue, position)
@@ -103,5 +103,5 @@ VALUES (
 '',
 '4',
 'µ =  2 + 4',
-0);
+'');
 
