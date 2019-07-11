@@ -10,7 +10,9 @@ Le but du jeu est de se déplacer par des clics (gauche, droit, arrière)
 de pièce en pièce en y trouvant le(s) indice(s) par pièce dans un laps de
 temps.
 
-Des textes d'information pourront vous aidez a trouver les indices des différentes pièces.
+Des textes d'information pourront vous aidez a trouver les indices des différentes pièces.  
+
+Nous avons une base de données MySQL nommée Enigma avec ses tables Person, Pièce et Score.  
 
 Voici les pièces suivantes :  
 [Porte d'entrée](https://imgur.com/juwrHV3)  
@@ -24,6 +26,7 @@ Voici les pièces suivantes :
 
 Java jdk 1.8  
 Apache Maven 3.5.4  
+MySQL Workbench 8.0  
 Vue CLI 3  
 
 ## Usage
