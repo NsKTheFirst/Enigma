@@ -14,8 +14,10 @@
 ## différentes pièces.
 
 ## Voici les pièces suivantes :
-  *
-  *
+## * Porte d'entrée
+## * Hall
+## * Cuisine
+
   
 
 
