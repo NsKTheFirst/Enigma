@@ -1,6 +1,47 @@
 <div>
     <Header/>
     <div class="main">
-
+        <h2>{{user.username}}</h2>
+        <div class="profil">
+            <div class="left">
+                <figure>
+                    <font-awesome-icon icon="user" class="fa-3x profilIcon"></font-awesome-icon>
+                </figure>
+                <!-- <p><strong>Pseudo :</strong> Dominick</p> -->
+                <!--<p>Temps moyen : {{score}}</p> TODO: à réactiver quand back fini     -->
+                <!-- <p><strong>Dernier temps :</strong> 3'56"</p> -->
+                <table>
+                    <thead>
+                    <tr>
+                        <th>
+                            Meilleurs temps
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+<!--                    <tr v-for="time in user.scores">--> <!-- TODO: à activer lorsque timer fait -->
+<!--                        <td>{{time}}</td>-->
+<!--                    </tr>-->
+                    <tr>
+                        <td>3'56"</td>
+                    </tr>
+                    <tr>
+                        <td>4'29"</td>
+                    </tr>
+                    <tr>
+                        <td>4'33"</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="right">
+                <form class="passForm" action="">
+                    <input type="text" placeholder="Ancien mot de passe" v-model="oldPassword">
+                    <input type="text" placeholder="Nouveau mot de passe" v-model="newPassword">
+                </form>
+                <span @click="updatePassword">Changer mot de passe</span>
+                <span @click="delAccount">Supprimer compte</span>
+            </div>
+        </div>
     </div>
 </div>
