@@ -14,20 +14,16 @@ Des textes d'information pourront vous aidez a trouver les indices des différen
 
 Nous avons une base de données MySQL nommée Enigma avec ses tables Person, Pièce et Score.  
 
-Voici les pièces suivantes :  
-[Porte d'entrée](https://imgur.com/juwrHV3)  
-[Hall](https://imgur.com/48qourp)  
-[Cuisine](https://imgur.com/wXUH39E)  
-[Salon](https://imgur.com/qGF7Iuu)  
-[Porte mystère](https://imgur.com/B9YEXdm)  
-
-
 ## Installation
 
-Java jdk 1.8  
-Apache Maven 3.5.4  
-MySQL Workbench 8.0  
-Vue CLI 3  
+<strong>Back-end :</strong>
+Java jdk 1.8             (ensemble de bibliothèques logicielles de base du langage de programmation Java)  
+Apache Maven 3.5.4       (permet de compiler et de déployer des applications Java)  
+MySQL Workbench 8.0      (est un logiciel de gestion et d'administration de bases de données  
+
+<strong>Front-end :</strong>  
+npm install              (installe toutes les dependences imbriqué sur le package.json)  
+Vue CLI 3                (est un framework permettant de construire des applications web simples)  
 
 ## Usage
 
@@ -36,8 +32,10 @@ Sous IDE > Build du projet Enigma
 Sous IDE > Run du projet Enigma  
 
 #### 2) Lancer la partie front-end :  
-du terminal > npm run serve  
-du navigateur >  http://localhost:8080/  
+Terminal > cd Enigma/Front/enigma
+Terminal > npm run start-dev (launch your project locally)
+
+Navigateur >  http://localhost:8080/  
 
 ## Réalisation
 
