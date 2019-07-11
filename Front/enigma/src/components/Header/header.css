@@ -11,22 +11,23 @@
   justify-content: space-between;
   position: fixed;
   background: #323232;
-  font-family: "Playfair Display SC", serif;
+  font-family: "Playfair Display", serif;
   z-index: 999;
   padding: 0.625em;
 }
-
-#header a {
-  margin-left: 2em;
+.link{
+  text-decoration: none;
   color: #cbab00;
+  font-size: 2em;
+  margin-left: .625em
 }
+/*#header a {*/
+/*  margin-left: 2em;*/
+/*  color: #cbab00;*/
+/*}*/
 .profil {
-  color: #000;
+  color: #cbab00;
   margin-right: 0.625em;
   margin-top: 0.3125em;
 }
-.logo {
-  width: 5.5em;
-  height: auto;
-  margin-left: 0.625em;
-}
+
