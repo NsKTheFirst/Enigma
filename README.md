@@ -16,11 +16,15 @@ Voici les pièces suivantes :
 ##### [Porte d'entrée](https://imgur.com/juwrHV3)
 ##### [Hall](https://imgur.com/48qourp)
 ##### [Cuisine](https://imgur.com/wXUH39E)
+##### [Salon](https://imgur.com/qGF7Iuu)
+##### [Porte mystère](https://imgur.com/B9YEXdm)
 
 
 ## Installation
 
-
+Java jdk 1.8        (
+Apache Maven 3.5.4  (mvn -version)
+React 6.4.1         (npm -version)
 
 ## Usage
 
