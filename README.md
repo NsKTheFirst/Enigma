@@ -2,7 +2,7 @@
 
 est un Escape Game en ligne.
 
-Il permet à un uilisateur joueur de s'identifier et de s'authentifier.
+Il permet à un utilisateur joueur de s'identifier et de s'authentifier.
 Il pourra y retouver son score moyen ainsi que ses 5 meilleures performances
 suite à sa connection.
 
