@@ -28,13 +28,19 @@ Vue CLI 3
 
 ## Usage
 
-#### Lancer la partie back-end (  
+#### Lancer la partie back-end :  
+Sous IDE > Build du projet Enigma  
+Sous IDE > Run du projet Enigma  
 
 #### Lancer la partie front-end :  
 du terminal > npm run serve  
 du navigateur >  http://localhost:8080/  
 
+## Réalisation
 
-  
+Olivia  
+Fadi  
+Nico  
+Dom  
 
 
