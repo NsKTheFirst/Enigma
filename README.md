@@ -24,10 +24,12 @@ Voici les pièces suivantes :
 
 Java jdk 1.8        (
 Apache Maven 3.5.4  (mvn -version)
-React 6.4.1         (npm -version)
+Vue CLI 3
 
 ## Usage
 
+Lancer la partie back-end (
+Lancer la partie front-end (du terminal > npm run serve)
 
 
   
