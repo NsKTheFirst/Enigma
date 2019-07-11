@@ -28,9 +28,9 @@ Vue CLI 3
 
 ## Usage
 
-### Lancer la partie back-end (  
+#### Lancer la partie back-end (  
 
-### Lancer la partie front-end :  
+#### Lancer la partie front-end :  
 du terminal > npm run serve  
 du navigateur >  http://localhost:8080/  
 
