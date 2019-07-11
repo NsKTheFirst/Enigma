@@ -36,12 +36,12 @@ export default {
       withCredentials: true,
       credentials: "include"
     }).then(response => {
-      console.log(response.status);
-      if (response.status != 200) {
-        alert("Cet utilisateur n'existe pas. Merci de vous inscrire.");
-      } else {
-        routeur.push("profile");
-      }
+      console.log(response.username);
+      // if (response.status != 200) {
+      //   alert("Cet utilisateur n'existe pas. Merci de vous inscrire.");
+      // } else {
+      //   routeur.push("profile");
+      // }
     });
   }
 };
