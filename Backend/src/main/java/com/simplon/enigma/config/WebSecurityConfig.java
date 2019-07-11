@@ -2,15 +2,23 @@ package com.simplon.enigma.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 
 /**
@@ -38,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/users/userProfile","/users/saveScores")
                 .permitAll().and().formLogin().loginPage("/security/login")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/security/me", true)
+                .successHandler(new AuthentificationLoginSuccessHandler())
                 .failureUrl("/security/authError").and().logout()
                 .invalidateHttpSession(true)
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
@@ -60,5 +68,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         .maxAge(3600L);
             }
         };
+    }
+
+
+    private class AuthentificationLoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+        @Override
+        public void onAuthenticationSuccess(HttpServletRequest request,
+                                            HttpServletResponse response, Authentication authentication)
+                throws IOException, ServletException {
+            response.setStatus(HttpServletResponse.SC_OK);
+        }
+    }
+
+    private class AuthentificationLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {
+        @Override
+        public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response,
+                                    Authentication authentication) throws IOException, ServletException {
+            response.setStatus(HttpServletResponse.SC_OK);
+        }
+    }
+    @Bean
+    public AuthenticationProvider getProvider() {
+        AppAuthProvider provider = new AppAuthProvider();
+        provider.setUserDetailsService(userDetailsService);
+        return provider;
     }
 }
