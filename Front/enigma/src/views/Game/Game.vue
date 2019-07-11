@@ -7,6 +7,13 @@
         name: "Game",
         components: {
             Header
+        },
+        data(){
+            return {
+                page: {
+                    imageUrl: "https://zupimages.net/up/19/28/s5mb.png"
+                }
+            }
         }
     }
 </script>

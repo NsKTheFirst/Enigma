@@ -19,6 +19,6 @@
     }
 
     #app {
-        /*background: #323232*/
+        background: #323232
     }
 </style>

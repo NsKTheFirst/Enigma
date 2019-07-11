@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 .main{
-    padding-top: 12.5em
+    padding-top: 12.5em;
+    height: 100vh
 }
 .connect{
     width: 40%;
