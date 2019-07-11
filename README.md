@@ -1,4 +1,4 @@
-# Enigma
+ Enigma
 
 est un Escape Game en ligne.
 
@@ -16,32 +16,30 @@ Nous avons une base de données MySQL nommée Enigma avec ses tables Person, Pi�
 
 ## Installation
 
-<strong>Back-end :</strong>
-Java jdk 1.8             (ensemble de bibliothèques logicielles de base du langage de programmation Java)  
-Apache Maven 3.5.4       (permet de compiler et de déployer des applications Java)  
-MySQL Workbench 8.0      (est un logiciel de gestion et d'administration de bases de données  
+<strong>Back-end :</strong>  
+Java jdk 1.8                        (ensemble de bibliothèques logicielles de base du langage de programmation Java)  
+Apache Maven 3.5.4                  (permet de compiler et de déployer des applications Java)  
+MySQL Workbench 8.0                 (est un logiciel de gestion et d'administration de bases de données  
 
 <strong>Front-end :</strong>  
-npm install              (installe toutes les dependences imbriqué sur le package.json)  
-Vue CLI 3                (est un framework permettant de construire des applications web simples)  
+Vue CLI 3                           (est un framework permettant de construire des applications web simples)  
 
 ## Usage
 
-#### 1) Lancer la partie back-end :  
-Sous IDE > Build du projet Enigma  
-Sous IDE > Run du projet Enigma  
+<strong>Lancer la partie back-end :</strong> 
+Terminal > cd Enigma/Backend  
+Terminal > mvn package            (maven compile votre projet Enigma en générant un fichier jar)  
+Sous IDE > java -jar fichier.jar  (execute votre projet en mode console)   
 
-#### 2) Lancer la partie front-end :  
+<strong>Lancer la partie front-end :</strong>  
 Terminal > cd Enigma/Front/enigma
-Terminal > npm run start-dev (launch your project locally)
-
+Terminal > npm install              (installe toutes les dependences imbriqué sur le package.json) 
+Terminal > npm run serve            (lance votre projet localement)  
 Navigateur >  http://localhost:8080/  
 
-## Réalisation
+## Merci à
 
 Olivia  
 Fadi  
 Nico  
 Dom  
-
-
