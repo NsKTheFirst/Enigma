@@ -12,24 +12,24 @@ temps.
 
 Des textes d'information pourront vous aidez a trouver les indices des différentes pièces.
 
-Voici les pièces suivantes :
-##### [Porte d'entrée](https://imgur.com/juwrHV3)
-##### [Hall](https://imgur.com/48qourp)
-##### [Cuisine](https://imgur.com/wXUH39E)
-##### [Salon](https://imgur.com/qGF7Iuu)
-##### [Porte mystère](https://imgur.com/B9YEXdm)
+Voici les pièces suivantes :  
+[Porte d'entrée](https://imgur.com/juwrHV3)  
+[Hall](https://imgur.com/48qourp)  
+[Cuisine](https://imgur.com/wXUH39E)  
+[Salon](https://imgur.com/qGF7Iuu)  
+[Porte mystère](https://imgur.com/B9YEXdm)  
 
 
 ## Installation
 
-Java jdk 1.8        (
-Apache Maven 3.5.4  (mvn -version)
-Vue CLI 3
+Java jdk 1.8  
+Apache Maven 3.5.4  
+Vue CLI 3  
 
 ## Usage
 
-Lancer la partie back-end (
-Lancer la partie front-end (du terminal > npm run serve)
+Lancer la partie back-end (  
+Lancer la partie front-end (du terminal > npm run serve)  
 
 
   
