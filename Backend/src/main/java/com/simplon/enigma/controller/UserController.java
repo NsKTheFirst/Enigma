@@ -1,9 +1,11 @@
 package com.simplon.enigma.controller;
 
 import com.simplon.enigma.model.Person;
+import com.simplon.enigma.model.Piece;
+import com.simplon.enigma.model.Score;
 import com.simplon.enigma.service.UserServiceImpl;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -24,6 +26,10 @@ public class UserController {
         return "hello world";
     }
 
+    @GetMapping("/userProfile")
+    public Person findOnePerson(@RequestParam String name){
+        return userService.findOnePerson(name);
+    }
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
@@ -37,10 +43,34 @@ public class UserController {
         userService.update(person);
     }
 
-    @Secured("ROLE_ADMIN")
     @DeleteMapping("/{id}")
     protected void delete(@PathVariable("id") UUID id){
         userService.delete(id);
     }
+
+    @GetMapping("/dashboard")
+    public Page<Score> findAll(@RequestParam(value = "s", required = false) Integer size,
+                                  @RequestParam("p") Integer page){
+        Integer checkedSize = (size == null ? 5 : size);
+
+        return userService.findAll(checkedSize, page);
+    }
+
+    @PostMapping("/saveScores")
+    public void saveScor(@RequestParam Integer value,@RequestParam UUID id ){
+        userService.saveScores(value, id);
+    }
+
+    @PostMapping("/saveScore")
+    public void saveScore(@RequestBody Score score){
+        userService.saveScore(score);
+    }
+
+    @GetMapping("/page")
+    public Piece findPage(@RequestParam Integer numPage){
+        return userService.findPieceByNumPage(numPage);
+    }
+
+
 
 }

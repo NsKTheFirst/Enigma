@@ -11,12 +11,12 @@
 </script>
 
 <style lang="scss">
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        appearance: scrollbarbutton-up;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  appearance: scrollbarbutton-up;
+}
 
     #app {
         background: #323232
