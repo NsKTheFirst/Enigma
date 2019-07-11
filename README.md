@@ -13,9 +13,18 @@ temps.
 Des textes d'information pourront vous aidez a trouver les indices des différentes pièces.
 
 Voici les pièces suivantes :
-#### [Porte d'entrée](https://imgur.com/juwrHV3)
-#### [Hall](https://imgur.com/48qourp)
-#### [Cuisine](https://imgur.com/wXUH39E)
+##### [Porte d'entrée](https://imgur.com/juwrHV3)
+##### [Hall](https://imgur.com/48qourp)
+##### [Cuisine](https://imgur.com/wXUH39E)
+
+
+## Installation
+
+
+
+## Usage
+
+
 
   
 
