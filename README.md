@@ -13,7 +13,7 @@ temps.
 Des textes d'information pourront vous aidez a trouver les indices des différentes pièces.
 
 Voici les pièces suivantes :
-o Porte d'entrée
+[Porte d'entrée](https://imgur.com/juwrHV3)
 o  Hall
 o Cuisine
 
