@@ -3,6 +3,7 @@
 
 <script>
     import Header from '@/components/Header/Header.vue'
+    import pagesService from '@/Services/pagesService'
     export default {
         name: "Game",
         components: {
@@ -10,20 +11,17 @@
         },
         data(){
             return {
-                page: {
-                    imageUrl: "https://zupimages.net/up/19/28/s5mb.png"
-                },
-                page1: {
-                    id: 1,
-                    nom: "Porte",
-                    imageUrl : "https://imgur.com/juwrHV3",
-                    text :  "J’y suis… Je ne réalise toujours pas que l’on me donne accès à la tristement célèbre maison d’Amityville pour un article.",
-                    left : null,
-                    right : null,
-                    back : null,
-                    clue : null,
-                    position : 11
-                },
+                page: {}
+            }
+        },
+        mounted(){
+            this.getPage()
+        },
+        methods:{
+            async getPage(){
+                let result = await pagesService.fetchPage(1)
+                console.log('page', result.data)
+                this.page = result.data
             }
         }
     }

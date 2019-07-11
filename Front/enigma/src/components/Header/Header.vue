@@ -5,16 +5,17 @@
         name: "Header",
         data(){
             return {
-                id_user: 2
+                userName: null
             }
         },
         mounted(){
-
+           this.userName = localStorage.userName
+            console.log('user', this.userName)
         },
         methods:{
             // toProfile(){
-            //     let userId = this.localStorage.idUser
-            //     this.$router.push({name: 'UserProfile', params: {userId}})
+            //     let userName = this.userName
+            //     this.$router.push({name: 'UserProfile', params: {userName}})
             // }
         }
     }

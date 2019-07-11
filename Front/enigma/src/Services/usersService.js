@@ -3,18 +3,17 @@ const axios = require("axios");
 export default {
   //create user
   createUser(userData) {
-    axios
-      .post("http://localhost:8080/users", userData)
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+   return axios.post("http://localhost:8080/users", userData)
+      // .then(response => {
+      //   console.log(response);
+      // })
+      // .catch(error => {
+      //   console.log(error);
+      // });
   },
 
   //loge user
-  logUser(userPassword, userName) {
+  async logUser(userPassword, userName) {
     let details = {
       username: userName,
       password: userPassword
@@ -28,17 +27,15 @@ export default {
     }
     formBody = formBody.join("&");
     console.log("formBody ", JSON.stringify(formBody));
-    fetch("http://localhost:8080/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: formBody,
-      mode: "no-cors",
-      withCredentials: true,
-      credentials: "include"
-    }).then(responseData => {
-      console.log(JSON.stringify(responseData));
-    });
-  }
+      fetch("http://localhost:8080/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: formBody,
+        mode: "no-cors",
+        withCredentials: true,
+        credentials: "include"
+      })
+    }
 };

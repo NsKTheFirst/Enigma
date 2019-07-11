@@ -7,20 +7,34 @@ export default {
   data() {
     return {
       userName: null,
-      password: null
+      password: null,
+      user: {}
     };
   },
   methods: {
-    createUser() {
+    async createUser() {
       event.preventDefault();
-      usersServices.createUser({
+      let response = await usersServices.createUser({
         username: this.userName,
         password: this.password
-      });
+      })
+        console.log('res', response.config.data)
+      this.user = JSON.parse(response.config.data)
+        console.log("user", this.user)
+      localStorage.setItem('userName', this.user.username)
+      if(localStorage.userName){
+        this.$router.push({name: 'GameMenu'})
+      }
     },
-    logUser() {
+    async logUser() {
       event.preventDefault();
-      usersServices.logUser(this.password, this.userName);
+      let response = await usersServices.logUser(this.password, this.userName);
+      console.log("response", response)
+      this.user = response.data
+      localStorage.setItem('userName', this.user.userName)
+      // if(localStorage.userName){
+      //     this.$router.push({name: 'GameMenu'})
+      // }
     }
   }
 };
