@@ -14,8 +14,8 @@
 ## différentes pièces.
 
 ## Voici les pièces suivantes :
-  o
-  o
+  *
+  *
   
 
 
