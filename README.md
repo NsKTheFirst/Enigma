@@ -10,8 +10,8 @@
 #### de pièce en pièce en y trouvant le(s) indice(s) par pièce dans un laps de
 #### temps.
 
-## Des textes d'information pourront vous aidez a trouver les indices des
-## différentes pièces.
+#### Des textes d'information pourront vous aidez a trouver les indices des
+#### différentes pièces.
 
 #### Voici les pièces suivantes :
 #### o Porte d'entrée
