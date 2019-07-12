@@ -18,25 +18,25 @@ export default {
             username: userName,
             password: userPassword
         };
-
-        let formBody = [];
-        for (let property in details) {
-            let encodedKey = encodeURIComponent(property);
-            let encodedValue = encodeURIComponent(details[property]);
-            formBody.push(encodedKey + "=" + encodedValue);
-        }
-        formBody = formBody.join("&");
-        console.log("formBody ", JSON.stringify(formBody));
-        fetch("http://localhost:8080/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: formBody,
-            mode: "no-cors",
-            withCredentials: true,
-            credentials: "include"
-        })
+        let base64Credential = btoa( userName+ ':' + userPassword); 
+ 
+        console.log(base64Credential); 
+         
+       
+          return axios.get("http://localhost:8080/security/login" ,   { 
+            headers: { 
+            'Authorization': 'Basic '+base64Credential, 
+            'Accept': 'application/json' 
+          } 
+        }) 
+          .map((response) => { 
+          // login successful if there's a jwt token in the response 
+          let user = response.json().principal;// the returned user object is a principal object 
+          if (user) { 
+            // store user details  in local storage to keep user logged in between page refreshes 
+            localStorage.setItem('currentUser', JSON.stringify(user)); 
+          } 
+        }); 
     },
     fetchUser(name){
         return axios.get('http://localhost:8080/users/userProfile?name=' + name)
