@@ -28,11 +28,11 @@
             updatePassword() {
                 console.log("Update cela marche")
             },
-            delAccount() {
-                console.log("Youpi c'est supprimé")
+            async delAccount() {
+                let result = await usersService.deleteUser(this.user.id)
+                console.log("Youpi c'est supprimé", result)
             }
         }
     }
-  
-
 </script>
+
