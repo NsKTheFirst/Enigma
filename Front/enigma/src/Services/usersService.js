@@ -66,13 +66,11 @@ export default {
         return axios.get('http://localhost:8080/users/userProfile?name=' + name)
     },
     deleteUser(id_user){
-        axios.delete('http://localhost:8080/users/' +id_user, {
-
-        })
+        axios.delete('http://localhost:8080/users/' +id_user)
     }
   }
 
 
 
 
-};
+
