@@ -1,6 +1,13 @@
 USE enigma;
 
-INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+CREATE TRIGGER insert_UUID 
+BEFORE INSERT ON piece
+FOR EACH  ROW 
+BEGIN 
+    SET NEW.id = UUID(); 
+END;
+
+INSERT INTO piece (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 1,
 'Porte entrée',
@@ -12,7 +19,7 @@ VALUES (
 '',
 11);
 
-INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO piece (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 2,
 'Hall',
@@ -24,7 +31,7 @@ VALUES (
 '',
 16);
 
-INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar,clue, position)
+INSERT INTO piece (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar,clue, position)
 VALUES (
 3,
 'Cuisine',
@@ -36,7 +43,7 @@ VALUES (
 '',
 10);
 
-INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO piece (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 4,
 'Salon',
@@ -48,7 +55,7 @@ VALUES (
 '',
 16);
 
-INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO piece (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 5,
 'Porte mystère',
@@ -60,7 +67,7 @@ VALUES (
 '',
 17);
 
-INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO piece (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 6,
 'Indice hall',
@@ -72,7 +79,7 @@ VALUES (
 '$ = 5',
 null);
 
-INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO piece (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 7,
 'Indice Cuisine',
@@ -85,7 +92,7 @@ VALUES (
 null);
 
 
-INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO piece (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 8,
 'Indice Salon',
