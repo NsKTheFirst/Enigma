@@ -30,7 +30,7 @@ export default {
       event.preventDefault();
       let response = await usersServices.logUser(this.password, this.userName);
       console.log("response", response)
-      this.user = response.data
+      this.user = response
       localStorage.setItem('userName', this.user.userName)
       if(localStorage.userName){
           this.$router.push({name: 'GameMenu'})
