@@ -19,31 +19,60 @@ export default {
             password: userPassword
         };
 
-        let formBody = [];
-        for (let property in details) {
-            let encodedKey = encodeURIComponent(property);
-            let encodedValue = encodeURIComponent(details[property]);
-            formBody.push(encodedKey + "=" + encodedValue);
-        }
-        formBody = formBody.join("&");
-        console.log("formBody ", JSON.stringify(formBody));
-        fetch("http://localhost:8080/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: formBody,
-            mode: "no-cors",
-            withCredentials: true,
-            credentials: "include"
-        })
-    },
+    // creating base64 encoded String from user name and password
+    let base64Credential = btoa( userName+ ':' + userPassword);
+
+  console.log(base64Credential);
+
+
+    return axios.get("http://localhost:8080/security/login" ,   {
+      headers: {
+      'Authorization': 'Basic '+base64Credential,
+      'Accept': 'application/json'
+    }
+  })
+    .map((response) => {
+    // login successful if there's a jwt token in the response
+    let user = response.json().principal;// the returned user object is a principal object
+    if (user) {
+      // store user details  in local storage to keep user logged in between page refreshes
+      localStorage.setItem('currentUser', JSON.stringify(user));
+    }
+  });
+
+
+
+    let formBody = [];
+    for (let property in details) {
+      let encodedKey = encodeURIComponent(property);
+      let encodedValue = encodeURIComponent(details[property]);
+      formBody.push(encodedKey + "=" + encodedValue);
+    }
+    formBody = formBody.join("&");
+    console.log("formBody ", JSON.stringify(formBody));
+    axios
+    .get("http://localhost:8080/users/login", {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin': '*'
+      }
+    }).then(responseData => {
+      console.log(responseData);
+    });
+  },
+
     fetchUser(name){
         return axios.get('http://localhost:8080/users/userProfile?name=' + name)
     },
     deleteUser(id_user){
         axios.delete('http://localhost:8080/users/' +id_user, {
-            
+
         })
     }
+  }
+
+
+
+
 };

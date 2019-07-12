@@ -4,13 +4,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
+
 /**
  * A controller to deal with API accesses.
  */
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/security")
 public class SecurityController {
@@ -66,10 +70,11 @@ public class SecurityController {
      */
     @RequestMapping("/login")
     // No security, anybody can create an account (see SecurityConfig)
-    protected ResponseEntity<Object> login() {
+    protected ResponseEntity<Object> login(Principal principal) {
         System.out.println("/login-------------------- hello fadi");
-	    HttpStatus status = HttpStatus.UNAUTHORIZED;
-	return new ResponseEntity<>(SecurityError.of(status, "Unauthorized"),
-		status);
+        HttpStatus status = HttpStatus.OK;
+        return new ResponseEntity<>(SecurityContextHolder.getContext()
+                .getAuthentication().getPrincipal(),
+                status);
     }
 }

@@ -3,17 +3,24 @@ package com.simplon.enigma.controller;
 import com.simplon.enigma.model.Person;
 import com.simplon.enigma.model.Piece;
 import com.simplon.enigma.model.Score;
+import com.simplon.enigma.model.User;
 import com.simplon.enigma.service.UserServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
+
+    public static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     private final UserServiceImpl userService;
 
@@ -72,5 +79,20 @@ public class UserController {
     }
 
 
+    // request method to create a new account by a guest
+    @CrossOrigin
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public ResponseEntity<?> createUser(@RequestBody Person newUser) {
+
+        return new ResponseEntity<Person>(userService.createUser(newUser), HttpStatus.CREATED);
+    }
+
+    // this is the login api/service
+    @CrossOrigin
+    @RequestMapping("/login")
+    public Principal user(Principal principal) {
+        logger.info("user logged "+principal);
+        return principal;
+    }
 
 }
