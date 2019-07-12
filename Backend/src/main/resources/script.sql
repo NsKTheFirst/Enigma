@@ -1,6 +1,6 @@
 USE enigma;
 
-CREATE TRIGGER insert_UUID 
+CREATE TRIGGER insert_Uuid_Piece
 BEFORE INSERT ON piece
 FOR EACH  ROW 
 BEGIN 
