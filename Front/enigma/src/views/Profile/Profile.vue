@@ -25,8 +25,9 @@
                 this.user = result.data
                 console.log('user', this.user)
             },
-            updatePassword() {
-                console.log("Update cela marche")
+            async updatePassword() {
+                let result = await usersService.updatePassword(this.user.id, this.newPassword)
+                console.log("Update cela marche", result)
             },
             async delAccount() {
                 let result = await usersService.deleteUser(this.user.id)
@@ -35,4 +36,3 @@
         }
     }
 </script>
-

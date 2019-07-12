@@ -26,12 +26,15 @@ export default {
         this.$router.push({name: 'GameMenu'})
       }
     },
-     logUser() {
+     async logUser() {
       event.preventDefault();
-      let response =  usersServices.logUser(this.password, this.userName);
+      let response =  await usersServices.logUser(this.password, this.userName);
       console.log("response", response)
-      this.user = response
-      localStorage.setItem('userName', this.user.userName)
+      // response.then(data => {
+      //   console.log('user :', data.data.username)
+      // })
+      this.user = response.data
+      localStorage.setItem('userName', this.user.username)
       if(localStorage.userName){
           this.$router.push({name: 'GameMenu'})
       }
