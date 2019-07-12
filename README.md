@@ -25,7 +25,7 @@ MySQL Workbench 8.0                 (est un logiciel de gestion et d'administrat
 <strong>Front-end :</strong>  
 Vue CLI 3                           (est un framework permettant de construire des applications web simples)  
 
-## Usage
+## Usage  
 
 <strong>Lancer la partie back-end :</strong> 
 du terminal de l'IDE > cd Enigma/Backend  
@@ -38,7 +38,7 @@ du terminal de l'IDE > npm install              (installe toutes les dependences
 du terminal de l'IDE > npm run serve            (lance votre projet localement)  
 Navigateur >  http://localhost:8080/  
 
-## Merci à
+## Merci à  
 
 Olivia  
 Fadi  
