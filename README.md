@@ -16,7 +16,7 @@ Nous avons une base de données MySQL nommée Enigma avec ses tables Person, Pi�
 
 ## Installation
 
-<strong>Back-end :</strong>
+<strong>Back-end :</strong>  
 IDE IntelliJ                        (est un environnement de développement intégré de technologie Java)  
 Java jdk 1.8                        (ensemble de bibliothèques logicielles de base du langage de programmation Java)  
 Apache Maven 3.5.4                  (permet de compiler et de déployer des applications Java)  
