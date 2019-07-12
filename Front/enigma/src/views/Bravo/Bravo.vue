@@ -8,6 +8,16 @@
         components: {
             Header
         },
+        data(){
+            return {
+                time: null
+            }
+
+        },
+        mounted(){
+            this.time = localStorage.time
+            console.log('time', this.time)
+        }
     }
 </script>
 

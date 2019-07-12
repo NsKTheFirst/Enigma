@@ -13,7 +13,9 @@
             return {
                 oldPassword: null,
                 newPassword: null,
-                user: {}
+                user: {},
+                oldUserPass: null,
+                newUserPass: null
             }
         },
         mounted(){
@@ -26,12 +28,19 @@
                 console.log('user', this.user)
             },
             async updatePassword() {
-                let result = await usersService.updatePassword(this.user.id, this.newPassword)
-                console.log("Update cela marche", result)
+                await usersService.updatePassword(this.user.id, this.newPassword)
+                this.getUser()
+                this.newUserPass = this.user.password
+                if(this.newUserPass !== this.oldUserPass){
+                    alert("Votre mot de passe à bien été modifié.")
+                }
             },
             async delAccount() {
-                let result = await usersService.deleteUser(this.user.id)
-                console.log("Youpi c'est supprimé", result)
+                if(confirm("Voulez vous vraiment supprimer votre compte?")){
+                    let result = await usersService.deleteUser(this.user.id)
+                    console.log("Youpi c'est supprimé", result)
+                    this.$router.push({name: 'Home'})
+                }
             }
         }
     }
