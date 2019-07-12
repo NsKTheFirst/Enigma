@@ -49,7 +49,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/*")
                 .permitAll()
                 // authenticate all remaining URLS
-                .anyRequest().fullyAuthenticated().and()
+                .and()
                 /* "/logout" will log the user out by invalidating the HTTP Session,
                  * cleaning up any {link rememberMe()} authentication that was configured, */
                 .logout()
