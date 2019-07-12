@@ -24,6 +24,7 @@
         </div>
         <div class="texte">
             <p>{{page.text}}</p>
+            <p v-if="page.clue">{{page.clue}}</p>
             <div class="soluce" v-if="porte === true">
                 <form action="">
                     <input type="text" placeholder="Code secret" v-model="code">

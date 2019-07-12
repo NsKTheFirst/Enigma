@@ -32,9 +32,9 @@ export default {
       console.log("response", response)
       this.user = response.data
       localStorage.setItem('userName', this.user.userName)
-      // if(localStorage.userName){
-      //     this.$router.push({name: 'GameMenu'})
-      // }
+      if(localStorage.userName){
+          this.$router.push({name: 'GameMenu'})
+      }
     }
   }
 };
