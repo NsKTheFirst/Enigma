@@ -1,11 +1,10 @@
 USE enigma;
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 1,
-1,
 'Porte entrée',
-' https://imgur.com/juwrHV3',
+' https://imgur.com/juwrHV3.png',
 'J’y suis… Je ne réalise toujours pas que l’on me donne accès à la tristement célèbre maison d’Amityville pour un article.',
 '',
 '',
@@ -13,12 +12,11 @@ VALUES (
 '',
 11);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 2,
-2,
 'Hall',
-'https://imgur.com/48qourp',
+'https://imgur.com/48qourp.png',
 '*Click*... tiens ? C’est comme si la porte s’était refermée derrière moi. J’ai un mauvais préssentiment. Je recherche la scène de crime et je file.',
 '3',
 '5',
@@ -26,12 +24,11 @@ VALUES (
 '',
 16);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar,clue, position)
+INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar,clue, position)
 VALUES (
 3,
-3,
 'Cuisine',
-'https://imgur.com/wXUH39E',
+'https://imgur.com/wXUH39E.png',
 'La cuisine est plutôt propre... étonnant.',
 '2',
 '4',
@@ -39,12 +36,11 @@ VALUES (
 '',
 10);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 4,
-4,
 'Salon',
-'https://imgur.com/qGF7Iuu',
+'https://imgur.com/qGF7Iuu.png',
 'Le salon a été décoré avec goût.',
 '3',
 '5',
@@ -52,12 +48,11 @@ VALUES (
 '',
 16);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 5,
-5,
 'Porte mystère',
-'https://imgur.com/B9YEXdm',
+'https://imgur.com/B9YEXdm.png',
 'La pièce qui m\'intéresse le plus est derrière cette porte... forcément fermée par un cadenas sur lequel on peut lire "µ&$". Je peux surement trouver la bonne combinaison.',
 '4',
 '2',
@@ -65,12 +60,11 @@ VALUES (
 '',
 17);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 6,
-6,
 'Indice hall',
-'https://imgur.com/4biuS0W',
+'https://imgur.com/4biuS0W.png',
 'C\'est avec ce téléphone que la mère a essayé de prévenir la police avant l\'inévitable. Oh, il est gravé quelque chose sur le combiné :',
 '',
 '',
@@ -78,12 +72,11 @@ VALUES (
 '$ = 5',
 null);
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 7,
-7,
 'Indice Cuisine',
-'https://imgur.com/QSCpv3L',
+'https://imgur.com/QSCpv3L.png',
 'Ah, en y regardant de plus près, il y a comme des traces brune sombres dans l’évier. Quelqu\'un a trempé son doigt dans cette même couleur pour écrire :',
 '',
 '',
@@ -92,12 +85,11 @@ VALUES (
 null);
 
 
-INSERT INTO page (id, numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
+INSERT INTO page (numPage, nom, imageUrl, text, left_ar, right_ar, back_ar, clue, position)
 VALUES (
 8,
-8,
 'Indice Salon',
-'https://imgur.com/mIY5ytf',
+'https://imgur.com/mIY5ytf.png',
 'Des notes en vrac… Rien n’a de sens, ces idées sembles bien provenir d’un esprit dérangé… Quelqu\'un a également griffonné :',
 '',
 '',
