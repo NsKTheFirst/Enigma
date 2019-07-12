@@ -27,14 +27,14 @@ Vue CLI 3                           (est un framework permettant de construire d
 
 ## Usage  
 
-<strong>Lancer la partie back-end :</strong> 
+<strong>Lancer la partie back-end :</strong>  
 du terminal de l'IDE > cd Enigma/Backend  
 du terminal de l'IDE > mvn package -Dmaven.test.skip=true   (maven compile votre projet Enigma en générant un fichier jar)  
 du terminal de l'IDE > java -jar fichier.jar  (execute votre projet en mode console)   
 
 <strong>Lancer la partie front-end :</strong>  
-du terminal de l'IDE > cd Enigma/Front/enigma
-du terminal de l'IDE > npm install              (installe toutes les dependences imbriqué sur le package.json) 
+du terminal de l'IDE > cd Enigma/Front/enigma  
+du terminal de l'IDE > npm install              (installe toutes les dependences imbriqué sur le package.json)  
 du terminal de l'IDE > npm run serve            (lance votre projet localement)  
 Navigateur >  http://localhost:8080/  
 
