@@ -3,7 +3,6 @@ package com.simplon.enigma.controller;
 import com.simplon.enigma.model.Person;
 import com.simplon.enigma.model.Piece;
 import com.simplon.enigma.model.Score;
-import com.simplon.enigma.model.User;
 import com.simplon.enigma.service.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +15,7 @@ import javax.validation.Valid;
 import java.security.Principal;
 import java.util.UUID;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/users")
 public class UserController {
