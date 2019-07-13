@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    background: #323232;
+    font-family: 'Playfair Display', serif;
+    padding-top: 8em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    text-align: center
+}
+.main h2{
+    color: #cbab00;
+    font-weight: 400;
+    margin-bottom: 1.25em
+}
+.vignette{
+    width: 50em;
+    height: auto;
+    margin: 0 auto 1.25em
+}
+.vignette:hover{
+    cursor: pointer
+}
+.vignette img{
+    max-width: 100%;
+}
+.startBtn{
+    margin: auto
+}
+.topFive table{
+    border: solid .0625em #cbab00;
+    margin: 0 auto 1.25em;
+    border-collapse: collapse;
+    color: #fff
+}
+.topFive table th, .topFive table td{
+    padding: .3125em;
+    border: solid .0625em #cbab00
+}

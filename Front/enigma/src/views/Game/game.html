@@ -1,0 +1,37 @@
+<div>
+    <Header/>
+    <div class="main">
+        <div class="gameView">
+            <figure class="arrow" v-if="page.leftAr">
+                <img src="@/assets/left.png" alt="" @click="left">
+            </figure>
+            <div class="view">
+                <figure class="picture">
+                    <img :src="page.imageUrl" alt="">
+                </figure>
+                <div class="grille">
+                    <div class="gridCase" v-for="cell in cases" @click="getPage(cell)"></div>
+                </div>
+            </div>
+            <figure class="arrow" v-if="page.rightAr">
+                <img src="@/assets/right.png" alt="" @click="right">
+            </figure>
+        </div>
+        <div class="backArrow" v-if="page.backAr">
+            <figure>
+                <img src="@/assets/back.png" alt="" @click="back">
+            </figure>
+        </div>
+        <div class="texte">
+            <p>{{page.text}}</p>
+            <p v-if="page.clue" style="color: #cbab00;">{{page.clue}}</p>
+            <div class="soluce" v-if="porte === true">
+                <form action="">
+                    <input type="text" placeholder="Code secret" v-model="code">
+                </form>
+                <span @click="checkCode">Valider</span>
+            </div>
+            <p v-if="retry === true" class="retry">Mauvais code, réessayez</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div>
+  <header><h1>Enigma</h1></header>
+  <div class="main">
+    <div class="connect">
+      <figure>
+        <img src="@/assets/logo_enigma.png" alt="" />
+      </figure>
+      <form action="">
+        <input type="text" placeholder="Pseudo" v-model="userName" />
+        <input type="text" placeholder="Mot de passe" v-model="password" />
+        <div class="actions">
+          <button @click="logUser">Se connecter</button>
+          <button @click="createUser">S'inscrire</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

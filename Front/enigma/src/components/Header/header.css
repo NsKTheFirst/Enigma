@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  background: #323232;
+  font-family: "Playfair Display", serif;
+  z-index: 999;
+  padding: 0.625em;
+}
+.link{
+  text-decoration: none;
+  color: #cbab00;
+  font-size: 2em;
+  margin-left: .625em
+}
+/*#header a {*/
+/*  margin-left: 2em;*/
+/*  color: #cbab00;*/
+/*}*/
+.profil {
+  color: #cbab00;
+  margin-right: 0.625em;
+  margin-top: 0.3125em;
+}
+

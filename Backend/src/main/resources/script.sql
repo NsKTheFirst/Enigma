@@ -1,3 +1,4 @@
+SELECT * FROM enigma.piece;
 USE enigma;
 
 CREATE TRIGGER insert_Uuid_Piece

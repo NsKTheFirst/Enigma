@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main {
+    font-family: 'Playfair Display', serif;
+    padding-top: 10em;
+    text-align: center;
+    background: #323232;
+    height: 100vh
+}
+.main h2{
+    font-size: 2.5em;
+    color: #cbab00;
+    margin-bottom: 4em
+}
+.profil{
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    margin: auto;
+    padding: 1.25em
+}
+.left{
+    border-right: solid .0625em #cbab00;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.left table{
+    background: #323232;
+    width: 50%;
+    margin: auto;
+}
+.left table th{
+    color: #cbab00;
+}
+.left table td{
+    padding: 0.1875em;
+    color: #fff
+}
+.profilIcon{
+    margin: .4em auto .2em
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 1.25em
+}
+.right span{
+    padding: .3125em;
+    border: solid .0625em #cbab00;
+    width: 50%;
+    margin:  0 auto 1.25em;
+}
+.right span:hover{
+    cursor: pointer
+}
+.passForm{
+    margin-bottom: 1.25em;
+    margin-top: 1.25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+.passForm input{
+    border-radius: .3em;
+    width: 50%;
+    margin: 0 auto 1.25em;
+    height: 2.5em
+}

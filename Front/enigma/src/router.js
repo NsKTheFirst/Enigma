@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Home from './views/Home/Home.vue'
+import Profile from './views/Profile/Profile.vue'
+import GameMenu from './views/GameMenu/GameMenu.vue'
+import Game from './views/Game/Game.vue'
+import Bravo from './views/Bravo/Bravo.vue'
 
 Vue.use(Router)
 
@@ -10,16 +14,28 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/profile/:userName',
+      name: 'Profile',
+      component: Profile
+    },
+    {
+      path: '/gameMenu',
+      name: 'GameMenu',
+      component: GameMenu
+    },
+    {
+      path: '/game',
+      name: 'Game',
+      component: Game
+    },
+    {
+      path: '/bravo',
+      name: 'Bravo',
+      component: Bravo
     }
   ]
 })
