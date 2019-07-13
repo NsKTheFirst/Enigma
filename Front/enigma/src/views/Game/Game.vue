@@ -4,6 +4,8 @@
 <script>
     import Header from '@/components/Header/Header.vue'
     import pagesService from '@/Services/pagesService'
+    import Timer from 'easytimer.js';
+    const timer = new Timer();
     export default {
         name: "Game",
         components: {
@@ -17,12 +19,14 @@
                 porte: false,
                 cases: [],
                 code: null,
-                retry: false
+                retry: false,
+                time: null
             }
         },
         mounted(){
             this.getFirstPage()
             this.createCases()
+            this.startTimer()
         },
         methods:{
             async getFirstPage(){
@@ -82,7 +86,17 @@
             },
             checkCode(){
                 console.log("code", this.code)
-                Number(this.code) === 536 ? this.$router.push({name: 'Bravo'}) : this.retry = true
+                if(Number(this.code) === 536){
+                    this.$router.push({name: 'Bravo'})
+                    this.time = timer.getTimeValues().toString()
+                    timer.stop()
+                    localStorage.setItem('time', this.time)
+                } else{
+                    this.retry = true
+                }
+            },
+            startTimer(){
+                timer.start()
             }
         }
     }

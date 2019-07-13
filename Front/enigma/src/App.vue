@@ -19,6 +19,7 @@
 }
 
     #app {
+        height: 100%;
         background: #323232
     }
 </style>
