@@ -30,7 +30,8 @@ Vue CLI 3                           (est un framework permettant de construire d
 <strong>Lancer la partie back-end :</strong>  
 du terminal de l'IDE > cd Enigma/Backend  
 du terminal de l'IDE > mvn package -Dmaven.test.skip=true   (maven compile votre projet Enigma en générant un fichier jar)  
-du terminal de l'IDE > java -jar fichier.jar  (execute votre projet en mode console)   
+du terminal de l'IDE > cd target  
+du terminal de l'IDE > java -jar enigma-0.0.1-SNAPSHOT.jar  (execute votre projet en mode console)   
 
 <strong>Lancer la partie front-end :</strong>  
 du terminal de l'IDE > cd Enigma/Front/enigma  
